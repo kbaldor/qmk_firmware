@@ -173,10 +173,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_BALDOR] = {
-  {_______, _______, _______, KC_ASTR, _______, _______, _______, _______, KC_LPRN, KC_RPRN, _______, KC_DELT},
-  {_______, _______, KC_MINS, KC_EQL , KC_PLUS, _______, _______, KC_HASH, KC_LBRC, KC_RBRC, _______, _______},
-  {_______, _______, _______, KC_SLSH, _______, _______, _______, _______, KC_LCBR, KC_RCBR, _______, _______},
-  {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
+  {_______, _______, _______, KC_ASTR, _______,    _______, _______, _______, KC_LPRN, KC_RPRN, _______, KC_DELT},
+  {_______, _______, KC_MINS, KC_EQL , KC_KP_PLUS, _______, _______, KC_HASH, KC_LBRC, KC_RBRC, _______, _______},
+  {_______, _______, _______, KC_SLSH, _______,    _______, _______, _______, KC_LCBR, KC_RCBR, _______, _______},
+  {KC_NLCK, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______}
 },
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
@@ -247,10 +247,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case BALDOR:
       if (record->event.pressed) {
         layer_on(_BALDOR);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       } else {
         layer_off(_BALDOR);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
       }
       return false;
       break;
