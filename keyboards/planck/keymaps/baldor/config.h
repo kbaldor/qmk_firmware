@@ -3,6 +3,9 @@
 
 #include "../../config.h"
 
+#undef PREVENT_STUCK_MODIFIERS
+#define PREVENT_STUCK_MODIFIERS 1
+
 #ifdef AUDIO_ENABLE
     #define STARTUP_SONG SONG(PLANCK_SOUND)
     // #define STARTUP_SONG SONG(NO_SOUND)
